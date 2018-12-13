@@ -4,14 +4,18 @@ import java.util.Scanner;
 
 import com.fellowship.utilities.utilities;
 
-public class program2 {
+public class program15 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-        System.out.println("enter no of times to flip coin:");
-        int flip = sc.nextInt();
-        utilities.flip_count(flip);
+		System.out.println("enter a:");
+		int a = sc.nextInt();
+		System.out.println("enter b:");
+		int b = sc.nextInt();
+		System.out.println("enter c:");
+		int c = sc.nextInt();
+		utilities.quadratic(a,b,c);
 	}
 
 }

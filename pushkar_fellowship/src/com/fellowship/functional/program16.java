@@ -4,14 +4,19 @@ import java.util.Scanner;
 
 import com.fellowship.utilities.utilities;
 
-public class program2 {
+public class program16 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
+		System.out.println("Enter t:");
 		Scanner sc = new Scanner(System.in);
-        System.out.println("enter no of times to flip coin:");
-        int flip = sc.nextInt();
-        utilities.flip_count(flip);
+		int t = sc.nextInt();
+		
+		System.out.println("Enter v:");
+		int v = sc.nextInt();
+
+		utilities.windchill(t,v);
 	}
 
 }

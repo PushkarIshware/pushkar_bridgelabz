@@ -157,7 +157,7 @@ public class utilities {
 
 	
 //********************************sum of triplets************************************************
-	public static void sum_of(int[] arr) {
+	public static void sum_of(int[] arr,int len) {
 		// TODO Auto-generated method stub
 		boolean found = false;
 		int n=arr.length;
@@ -185,5 +185,41 @@ public class utilities {
 	    if (found == false) 
 	        System.out.println(" not exist "); 
 	  
+	}
+//************************************************************************
+	
+//*****************************DISTANCE************************************
+	public static void distance(int x, int y) {
+		// TODO Auto-generated method stub
+		float Euclidean_distance=(float) Math.pow((x*x + y*y), 0.5);
+		System.out.println("Euclidean distance is: "+Euclidean_distance);
+	}
+
+	//********************************************************************************
+	//************************quadratic***********************************************
+	
+	public static void quadratic(int a, int b, int c) {
+		// TODO Auto-generated method stub
+		double delta = b*b-4*a*c;
+		double x_1=(-b + Math.sqrt(delta))/(2*a);
+		double x_2=(-b - Math.sqrt(delta))/(2*a);
+		System.out.println(delta);
+		System.out.println("Root 1 of x= "+x_1+ "\n Root 2 of x="+x_2);
+	}
+//************************************************************************
+//****************************Windchill****************************************
+	
+
+	public static void windchill(int t, int v) {
+		// TODO Auto-generated method stub
+		if (t>50 || 3 < v && v > 120)
+		{
+			System.err.println("invalid results becouse of high t and v values");
+		}
+		else
+		{
+			double w=35.74+(0.6215*t)+(((0.4275*t)-35.75)*Math.pow(v, 0.16));
+			System.out.println("the wind chill is: "+ w);
+		}
 	} 
 }

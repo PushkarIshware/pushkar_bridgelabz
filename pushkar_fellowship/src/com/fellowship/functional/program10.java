@@ -9,10 +9,11 @@ public class program10 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		System.out.println("enter stake:");
+		System.out.println("enter length:");
 		int len = sc.nextInt();
-		int arr[] = {};
-		utilities.sum_of(arr);
+		int arr[] = {0, -1, 2, -3, 1}; 
+	    int n =arr.length; 
+		utilities.sum_of(arr,len);
 	}
 
 }
