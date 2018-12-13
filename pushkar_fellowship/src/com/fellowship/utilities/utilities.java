@@ -79,7 +79,7 @@ public class utilities {
 		int count=0;
 		if (power > 31)
 		{
-			System.out.println("2^31 overflows an int value.");
+			System.err.println("2^31 overflows an int value.");
 			program4.main(null);
 		}
 		else
@@ -111,6 +111,79 @@ public class utilities {
 	}
 //**********************************************************************************
 
+	public static void prime_factors(int number) {
+		 System.out.print("The prime factorization of " + number + " is: ");
+
+        // for each potential factor
+        for (long factor = 2; factor*factor <= number; factor++) {
+
+            // if factor is a factor of n, repeatedly divide it out
+            while (number % factor == 0) {
+                System.out.print(factor + " "); 
+                number = (int) (number / factor);
+            }
+        }
+
+        // if biggest factor occurs only once, n > 1
+        if (number > 1) 
+        	{System.out.println(number);}
+        else       {System.out.println();}
+    }
+//***************************************************************************
+	
+//*****************************Gamble**********************************************
+	public static void gamble(int s, int g, int t) {
+		// TODO Auto-generated method stub
+		int wins=0;
+		int bets=0;
+		
+		for(int i=0; i<=t; i++) 
+		{
+			int cash = s;
+            while (cash > 0 && cash < g) {
+                bets++;
+                if (Math.random() < 0.5) cash++;     // win $1
+                else                     cash--;     // lose $1
+            }
+            if (cash == g) wins++;                // did gambler go achieve desired goal?
+        }
+
+        // print results
+        System.out.println(wins + " wins of " + t);
+        System.out.println("Percent of games won = " + 100.0 * wins / t);
+        System.out.println("Avg # bets           = " + 1.0 * bets / t);
+    }
+//*********************************************************************************
 
 	
+//********************************sum of triplets************************************************
+	public static void sum_of(int[] arr) {
+		// TODO Auto-generated method stub
+		boolean found = false;
+		int n=arr.length;
+		for (int i=0; i<n-2; i++) 
+	    { 
+	        for (int j=i+1; j<n-1; j++) 
+	        { 
+	            for (int k=j+1; k<n; k++) 
+	            { 
+	                if (arr[i]+arr[j]+arr[k] == 0) 
+	                { 
+	                    System.out.print(arr[i]); 
+	                    System.out.print(" "); 
+	                    System.out.print(arr[j]); 
+	                    System.out.print(" "); 
+	                    System.out.print(arr[k]); 
+	                    System.out.print("\n"); 
+	                    found = true; 
+	                } 
+	            } 
+	        } 
+	    } 
+	  
+	    // If no triplet with 0 sum found in array 
+	    if (found == false) 
+	        System.out.println(" not exist "); 
+	  
+	} 
 }
