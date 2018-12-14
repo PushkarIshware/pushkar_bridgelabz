@@ -3,6 +3,12 @@ package com.fellowship.utilities;
 
 import com.fellowship.functional.*;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.Scanner;
 public class utilities {
 	 
 	
@@ -17,7 +23,10 @@ public class utilities {
 		}
 		else 
 		{	
-		System.out.println("Hello " + name + ", How are you.");
+			String s1="Hello <<UserName>>, How are you?";
+			                     
+			String news1=s1.replace("<<UserName>>",name);
+			System.out.println(news1);
 		}
 	}
 //***************************************************************************
@@ -207,6 +216,7 @@ public class utilities {
 		System.out.println("Root 1 of x= "+x_1+ "\n Root 2 of x="+x_2);
 	}
 //************************************************************************
+	
 //****************************Windchill****************************************
 	
 
@@ -221,5 +231,47 @@ public class utilities {
 			double w=35.74+(0.6215*t)+(((0.4275*t)-35.75)*Math.pow(v, 0.16));
 			System.out.println("the wind chill is: "+ w);
 		}
-	} 
-}
+	}
+
+	
+//*********************************************************************************
+	
+//*******************************metrix**************************************************
+	public static void int2read(int a2d[][]) {
+		// TODO Auto-generated method stub
+        PrintWriter pw = new PrintWriter(System.out);
+
+		for (int r=0; r<a2d.length; r++)
+		{
+			for (int c=0; c<a2d.length; c++)
+			{
+				int z=a2d[r][c];
+			//System.out.print(a2d[r][c]+"\t");
+			//System.out.print(z+"\t");
+			pw.print(z+"\t");
+			}
+			pw.println();
+			//System.out.println();
+			pw.flush();
+		}
+		
+		
+	}
+//****************************************************************************
+	//**************************************************************************
+	public static void stopwatch() {
+		// TODO Auto-generated method stub
+		long duration = 0;
+	    long start = 0;
+	    boolean active = false;
+	    
+	    public static void S_Start() {
+	        start = System.currentTimeMillis();
+	        active = true;
+		
+	}
+
+	}
+	}
+
+	
