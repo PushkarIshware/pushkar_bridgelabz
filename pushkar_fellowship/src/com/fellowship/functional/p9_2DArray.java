@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 import com.fellowship.utilities.utilities;
 
-public class program9 {
+public class p9_2DArray {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub

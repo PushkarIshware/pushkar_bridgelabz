@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.fellowship.utilities.utilities;
 
-public class program15 {
+public class p15_Quadratic {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

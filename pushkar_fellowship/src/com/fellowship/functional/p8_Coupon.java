@@ -4,15 +4,9 @@ import java.util.Scanner;
 
 import com.fellowship.utilities.utilities;
 
-public class program4 {
+public class p8_Coupon {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
-		System.out.println("enter power counter:");
-		int power = sc.nextInt();
-		
-		utilities.power_of(power);
-	}
-
+}
 }

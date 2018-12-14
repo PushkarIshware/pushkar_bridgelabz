@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.fellowship.utilities.utilities;
 
-public class program10 {
+public class p10_SumTriplet {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

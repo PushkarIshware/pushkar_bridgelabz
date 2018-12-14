@@ -4,15 +4,19 @@ import java.util.Scanner;
 
 import com.fellowship.utilities.utilities;
 
-public class program1 {
+public class p16_WindChill {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Enter your name:");
-		
+
+		System.out.println("Enter t:");
 		Scanner sc = new Scanner(System.in);
-		String name = sc.nextLine();
-		utilities.name_change(name);
+		int t = sc.nextInt();
+		
+		System.out.println("Enter v:");
+		int v = sc.nextInt();
+
+		utilities.windchill(t,v);
 	}
 
 }

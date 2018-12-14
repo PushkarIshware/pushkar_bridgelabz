@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.fellowship.utilities.utilities;
 
-public class program5 {
+public class p5_Harmonic {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

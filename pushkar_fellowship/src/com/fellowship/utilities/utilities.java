@@ -19,7 +19,7 @@ public class utilities {
 		if (name.length()<3)
 		{
 			System.out.println("Name Should be 3+ letters");
-			program1.main(null);
+			p1_Replace.main(null);
 		}
 		else 
 		{	
@@ -65,7 +65,7 @@ public class utilities {
 		if(year.length()<4)
 		{
 			System.out.println("enter four digit year");
-			program3.main(null);
+			p3_Leapyear.main(null);
 		}
 		else
 		{
@@ -89,7 +89,7 @@ public class utilities {
 		if (power > 31)
 		{
 			System.err.println("2^31 overflows an int value.");
-			program4.main(null);
+			p4_PowerOf.main(null);
 		}
 		else
 		{
@@ -261,15 +261,7 @@ public class utilities {
 	//**************************************************************************
 	public static void stopwatch() {
 		// TODO Auto-generated method stub
-		long duration = 0;
-	    long start = 0;
-	    boolean active = false;
-	    
-	    public static void S_Start() {
-	        start = System.currentTimeMillis();
-	        active = true;
 		
-	}
 
 	}
 	}

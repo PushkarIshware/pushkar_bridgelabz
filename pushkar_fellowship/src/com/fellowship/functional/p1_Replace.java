@@ -4,17 +4,15 @@ import java.util.Scanner;
 
 import com.fellowship.utilities.utilities;
 
-public class program11 {
+public class p1_Replace {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System.out.println("Enter your name:");
+		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("enter value of x:");
-		int x = sc.nextInt();
-		System.out.println("enter value of y:");
-		int y = sc.nextInt();
-		utilities.distance(x,y);
+		String name = sc.nextLine();
+		utilities.name_change(name);
 	}
-	
 
 }

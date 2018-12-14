@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.fellowship.utilities.utilities;
 
-public class program7 {
+public class p7_Gamble {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
