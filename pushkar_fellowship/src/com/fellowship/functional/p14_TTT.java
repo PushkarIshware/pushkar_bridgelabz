@@ -1,13 +1,12 @@
 package com.fellowship.functional;
 
-import com.fellowship.utilities.utilities;;
+import com.fellowship.utilities.utilities;
 
-public class p13_stopwatch {
+public class p14_TTT {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		utilities.start();
-		
-	
+			utilities.TTT();
 	}
+
 }

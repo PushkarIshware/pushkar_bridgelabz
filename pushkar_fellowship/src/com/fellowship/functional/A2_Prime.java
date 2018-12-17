@@ -4,20 +4,18 @@ import java.util.Scanner;
 
 import com.fellowship.utilities.utilities;
 
- 
-
-public class p10_SumTriplet {
+public class A2_Prime {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-		//System.out.println("enter length:");
-		//int len = sc.nextInt();
-		int arr[] = {0, -1, 2, -3, 1}; 
-	    int n =arr.length; 
-		utilities.sum_of(arr);
-	    
-	    
+		System.out.println("enter lower bound:");
+		int n1= sc.nextInt();
+		System.out.println("enter upper bound");
+		int n2= sc.nextInt();
+		//utilities.prime(n1,n2);
+		
+
 	}
 
 }
