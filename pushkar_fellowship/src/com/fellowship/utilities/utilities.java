@@ -10,8 +10,11 @@ import javax.swing.text.Utilities;
 import com.fellowship.functional.*;
 
 import java.awt.Window.Type;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -601,9 +604,10 @@ public class utilities {
 				
 			}
 //********************************************************************
-
-			public static int BinarySearch(int[] data, int key) {
+//************************BINARY SEARCH FOR INT*************************
+			public static void BinarySearch(int[] data, int key) {
 				// TODO Auto-generated method stub
+				Arrays.sort(data);
 				int start=0;
 				int end=data.length-1;
 				
@@ -615,6 +619,7 @@ public class utilities {
 					//System.out.println(mid);
 					if(data[mid]==key) {
 						System.out.println(mid);
+						break;
 						}
 					if(key<data[mid])
 					{
@@ -626,48 +631,207 @@ public class utilities {
 					}
 					
 				}
-				return -1;	
+				if(start>end)
+					System.out.println("not found");
 			}
-			
+//****************************************************************************			
 //******************************String Binary Search***********
 			
-			public static int StringBinarySort(String[] data_string, String key1) {
+			public static void StringBinarySort(String[] data_string, String key1) {
 				// TODO Auto-generated method stub
-				
-				
-			Arrays.sort(data_string);
-			int start=0;
-			int end=data_string.length-1;
-		while(start<=end)
+				int start=0;
+				int end=data_string.length-1;
+		
+			while(start<=end)
 		{	
 			int mid=(start+end)/2;
-			if(key1.compareTo(data_string[mid])==0)
+			int z=key1.compareTo(data_string[mid]);
+			if(z==0)
 			{
-				end=mid;
+				System.out.println("found at "+mid);
+				break;
 			}
-			else if (key1.compareTo(data_string[mid]) > 0)
+			else if (z < 0)
 			{
-				start = mid+1;
+				end=mid-1;
 			}
 			else
 			{
-				System.out.println(mid);
-				break;
+				start = mid+1;
 			}
 			
 		}
-			return -(start+1);
-		}
+			/*if(start>end) 
+				System.out.println("not found");
+		*/
+			}
 
+			
 
+//***********************************************************************
+//***********************INSERTION SORT INT******************************
 
+			public static void insertion_sort_int(int[] insertion_data, int len) {
+				// TODO Auto-generated method stub
+				    for(int i=1;i<=len;i++)
+				    {
+				    	int temp=insertion_data[i];
+				    	int blank=i;
+				    	while(blank >0 && insertion_data[blank-1]>temp )
+				    	{
+				    		insertion_data[blank] = insertion_data[blank-1];
+				    		blank-=1;
+				    	}
+				    	insertion_data[blank]=temp;
+				    }
+				    
+				    for(int j=0;j<=len;j++)
+				    {
+				    System.out.println(insertion_data[j]);
+			}}
+//*******************************************************************
+			
+			/*public static void insertion_sort_string(String[] insert_data_string){
+				// TODO Auto-generated method stub
+				
+			    String temp="";
+				for(int i=0;i<=insert_data_string.length-1;i++)
+			    {
+			    	for (int j=i+1;i<=insert_data_string.length-1;j++)
+			    	{
+			    		if(insert_data_string[i].compareToIgnoreCase(insert_data_string[j])>0)
+			    		{
+			    			temp=insert_data_string[i];
+			    			insert_data_string[i]=insert_data_string[j];
+			    			insert_data_string[j]=temp;
+			    		}
+			    	}
+			    }
+				System.out.println("sorted array:");
+				for(int k=0;k<insert_data_string.length;k++)
+				{
+					System.out.println(insert_data_string[k]);
+				}
+			}*/
+			public static void string_InsertionSort(String arr[]) {
+				   
+			    String temp="";
+			    //int insertionSortStart=(int) System.nanoTime();
+			    for (int i=0;i<arr.length;i++) {
+			        for (int j =i+1;j<arr.length;j++) {
+			            if(arr[i].compareToIgnoreCase(arr[j])>0) {
+			                temp = arr[i];
+			                arr[i]=arr[j];
+			                arr[j]=temp;
+			               
+			            }
+			           
+			        }
+			       
+			    }
+			    for (int e=0;e<arr.length;e++) {
+			        System.out.println(arr[e]);
+			       
+			    }
+			}
+	//*********************************************************************************		
 
+			public static void BubbleSortInt(int[] data1) {
+				// TODO Auto-generated method stub
+				int len = data1.length;
+				System.out.println("length is: "+len);
+			
+				for(int i=0;i<len-1;i++)
+				{
+					for(int j=0;j<len-i-1;j++)
+					{
+						if(data1[j]>data1[j+1])
+						{
+							int temp=data1[j];
+							data1[j]=data1[j+1];
+							data1[j+1]=temp;
+							
+							
+						}	
+					}
+				}
+				for(int k=0;k<len;k++) {
+				System.out.println(data1[k]);}
+				
+			}
+//***********************************************************************
+//****************************BUBBLE_SORT_STRING*************************
 
+			public static void BubbleSort_String(String[] data_string) {
+				// TODO Auto-generated method stub
+				String temp="";
+				int len=data_string.length;
+				
+				for(int i=0;i<len-1;i++)
+				{
+					for(int j=0;j<len-i-1;j++)
+					{
+						if(data_string[j].compareToIgnoreCase(data_string[j+1])>0)
+						{
+							temp=data_string[j];
+							data_string[j]=data_string[j+1];
+							data_string[j+1]=temp;
+							
+						}	
+					}
+				}
+				for(int k=0;k<len;k++) {
+				System.out.println(data_string[k]);
+				}
+			}
+//*****************************************************************s
+//****************************GUESS_NUMBER*************************
 
+			public static int Guess_number(int lo,int hi) {
+				// TODO Auto-generated method stub
+				
+				Scanner sc=new Scanner(System.in);
+				if ((hi - lo)==1) {
+				    return lo;
+				}
+				int mid=(hi+lo)/2;
+				System.out.println("Is Your number less than "+mid+" ? \n  (1 to Yes) OR (0 to NO)");
+				int a =sc.nextInt();
+				if (a==1) {
+				    return Guess_number(lo, mid);
+				}
+				else {
+				    return Guess_number(mid, hi);   
+				}
+				
+			}
+//*****************************************************************
+//****************************GUESS_NUMBER*************************		
 
-
+			public static void BS_File_Read() throws IOException {
+				// TODO Auto-generated method stub
+				
+				    File f =new File("/home/admin1/pushkar_projects/A5.txt");
+				    String values[] = null;
+				    Scanner sc =new Scanner(System.in);
+				      String line = null;
+				     BufferedReader br = new BufferedReader(new FileReader(f));
+				     while ((line = br.readLine()) != null) {
+				           values = line.split(",");
+				          for (String str : values) 
+				          {
+				            System.out.println(str);
+				          }
+				        }
+				        br.close();
+				        System.out.println("Enter Element to search  :");
+				        String key2=sc.nextLine();
+				        StringBinarySort(values,key2);  
+			}
 }
+//*****************************************************************
 
+//
 	
 	
 	
