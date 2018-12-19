@@ -1,5 +1,6 @@
 package com.fellowship.utilities;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Random;
  import java.util.Set;
 import java.util.Timer;
@@ -16,6 +17,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream.GetField;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.Random;
@@ -828,10 +830,221 @@ public class utilities {
 				        String key2=sc.nextLine();
 				        StringBinarySort(values,key2);  
 			}
-}
-//*****************************************************************
 
-//
+			
+//*****************************************************************
+			//static int notes_count=0;
+			static int notes[]= {1000,500,100,50,10,5,2,1};
+			static int i=0;
+			static int money;
+			public static int total_notes=0;
+			public static int vending(int[] notes, int my_money) {
+				// TODO Auto-generated method stub
+				int remaining;
+				if (my_money==0)
+				{
+					//System.out.println("enter value > 0...");
+					return -1;
+				}
+				else
+				{
+					if(my_money>=notes[i])
+					{
+						int notes_count=my_money/notes[i];
+						remaining=my_money%notes[i];
+						my_money=remaining;
+						total_notes+=notes_count;
+						System.out.println("return "+notes[i]+"Rs. x "+notes_count+" note.");
+						
+					}
+					
+					i++;
+					
+					return (vending(notes,my_money));
+				}
+				
+			}
+//********************************************************************************
+static int usa[]= {22,12,1,6,8,0,5};
+static int len=usa.length;
+static int tua[];
+public static int array[];
+/*static int low;
+static int high;*/
+			public static void sort()
+			{
+				divide(0,len-1);
+				/*array=usa;
+				len=usa.length;
+				tua= new int[len];
+				*/
+				
+				for(int i=0;i<=usa.length-1;i++)
+				{
+					System.out.println(usa[i]+" ");
+				}
+			
+				
+			}
+			public static void divide(int low,int high)
+			{
+				if(low<high)
+				{
+					int middle = low + (high-low)/2;
+					
+					divide(low,middle);	//left side
+					divide(middle+1,high);	//right side
+					
+					merging(low, middle, high);
+				}
+				
+			}
+			public static void merging(int low,int middle,int high)
+			{
+				int tua[] = new int[len];
+				for(int i=low;i<=high;i++)
+				{
+					tua[i]=usa[i];
+				}
+				
+				
+				int i=low;
+				int j=middle+1;
+				int k = low;
+				while(i <= middle && j <= high)
+				{
+					if(tua[i] <= tua[j])
+					{
+						usa[k]=tua[i];
+						i++;
+					}
+					else
+					{
+						usa[k]=tua[j];
+						j++;
+					}
+					k++;
+				}
+				while(i<=middle)
+				{
+					usa[k]=tua[i];
+					k++;
+					i++;
+				}
+			}
+//**************************************************		
+
+			public static void DOW(int date,int month,int year) {
+				
+				/*HashMap<String, Integer> map = new HashMap<>(); 
+		          
+		      
+		        map.put("Sunday", 0); 
+		        map.put("Monday", 1); 
+		        map.put("Tuesday", 2); 
+		        map.put("Wednesday", 3);
+		        map.put("Thusday", 4);
+		        map.put("Friday", 5);
+		        map.put("Saturday", 6);
+		        */
+				/*if(date=< 31 && date>0 && month>0 && month<=12) 
+				{*/
+				int year1 = year - (14 - month ) / 12;
+				int x = year1 + year1 /4 - year1 /100 + year1 /400;
+				int month1 = month + 12 * ((14 - month ) / 12) - 2;
+				int date1 = ( date  + x + 31* month1 / 12) % 7;
+				System.out.println("day is:"+date1);
+				
+					if(date1==0)
+					{
+						System.out.println("Sunday");
+					}
+					else if(date1==1)
+					{
+						System.out.println("Monday");
+					}
+					else if(date1==2)
+					{
+						System.out.println("Tuesday");
+					}
+					else if(date1==3)
+					{
+						System.out.println("Wednesday");
+					}
+					else if(date1==4)
+					{
+						System.out.println("Thusday");
+					}
+					else if(date1==5)
+					{
+						System.out.println("Friday");
+					}
+					else if(date1==6)
+					{
+						System.out.println("Saturday");
+					}
+					else
+					{
+						System.out.println("invalid");
+					}
+				}
+			//}
+//**********************************************************************************
+//*****************************TEMP*************************************************
+			
+			/*public static char c;
+			public static char f1;*/
+			public static void Fahrenheit_to_Celsius(float f) {
+			    // TODO Auto-generated method stub
+			    float c =(float) ((f - 32) * 0.55) ;
+			    System.out.println(c);
+			}
+
+			public static void Celsius_to_Fahrenheit(float c) {
+			    // TODO Auto-generated method stub
+			    float f =(float) ((c * (1.8)) + 32);
+			    System.out.println(f);
+			}
+//***************************************************************************
+//************************EPSILON********************************
+			public static void result(int n) {
+				// TODO Auto-generated method stub
+				double epsilon = 1e-15;
+			    double t = n;
+			     while (Math.abs(t - n/t) > epsilon*t) {
+			         t = (n/t + t) / 2.0;
+			     }
+			   
+			System.out.println(t);
+			}
+//*******************************************************************************
+//*********************MONTHLY INT***********************************************
+			public static void payment(double Y, double R, double P) {
+				// TODO Auto-generated method stub
+				double n = 12*Y;
+			    double r = R /(1200);
+			    double z= Math.pow((1+r), (-n));
+			    double payment = (P*r)/( 1 - z);
+			    System.out.println("payment: "+payment);
+
+
+			}
+//*******************************************************************************
+//*********************TO BINARY***********************************************
+			public static void ToBinary(int n) {
+				// TODO Auto-generated method stub
+				String z=Integer.toString(n,2);
+				while(z.length()!=8)	
+				{
+					z="0"+z;	
+				}
+				System.out.println(z);
+				}
+//*******************************************************************************
+//********************* ***********************************************			
+			
+			
+}
 	
 	
 	
